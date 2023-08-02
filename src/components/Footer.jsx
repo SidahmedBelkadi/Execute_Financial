@@ -21,7 +21,7 @@ const Footer = () => {
         </ul>
         <div className="bottom">
           <span className="line"></span>
-          <p>2023 Execute, Inc. All rights reserved</p>
+          <p>2023 Sidahmed Belkadi, Inc. All rights reserved</p>
         </div>
       </div>
     </footer>
