@@ -2,7 +2,7 @@ import './css/Hero.css'
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id='hero'>
         <div className="content">
             <p>Call us</p>
             <p>1-800-123-456</p>

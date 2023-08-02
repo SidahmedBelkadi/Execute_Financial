@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+.header-bg {
+    background-color: rgba(0, 0, 0, .9);
+}
+
 .header .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,6 +34,11 @@
     font-weight: 500;
 }
 .navbar .nav-item  a {color: #fff}
+
+.nav-item .active {
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--secondary-color);
+}
 
 .navbar .nav-item  a:hover {
     padding-bottom: 12px;

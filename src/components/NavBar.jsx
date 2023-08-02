@@ -1,38 +1,53 @@
+import { useState } from 'react'
+import { Link } from 'react-scroll'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import logo from '../images/logo.png'
 import './css/NavBar.css'
-import { useState } from 'react'
 
 
 const NavBar = () => {
 
 
-    const [nav, setNav] = useState(false)
+  const [nav, setNav] = useState(false)
 
-    const hanldeNavClick = () => setNav(!nav)
+  const hanldeNavClick = () => setNav(!nav)
+  const closeMenu = () => setNav(false)
+
+  const [color, setColor] = useState(false) 
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 90) {
+      setColor(true)
+    }else{
+      setColor(false)
+    }
+
+  })
+  
+
 
   return (
-    <section className="header">
+    <section className={color ? 'header header-bg' : 'header'}>
       <nav className="navbar">
-        <a href="/" className="logo">
+        <Link to="hero" spy={true} smooth={true} duration={1500} className="logo">
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
         <div className="hamburger" onClick={hanldeNavClick} >
         {nav ? (<FaTimes size='30' style={{ color: '#fff' }} />) :
         (<FaBars size='30' style={{ color: '#fff' }} />)}
         </div>
         <ul className={nav ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <a href="/">Home</a>
+            <Link to="hero" spy={true} smooth={true} offset={-80} duration={1500} onClick={closeMenu}>Home</Link>
           </li>
           <li className="nav-item">
-            <a href="/">About</a>
+            <Link to="about" spy={true} smooth={true} offset={-80} duration={500} onClick={closeMenu}>About</Link>
           </li>
           <li className="nav-item">
-            <a href="/">Testimonials</a>
+            <Link to="testimonials" spy={true} smooth={true} offset={-70} duration={500} onClick={closeMenu}>Testimonials</Link>
           </li>
           <li className="nav-item">
-            <a href="/">Demo</a>
+            <Link to="demo" spy={true} smooth={true} offset={-70} duration={1500} onClick={closeMenu}>Demo</Link>
           </li>
         </ul>
       </nav>

@@ -2,7 +2,7 @@ import './css/Demo.css'
 
 const Demo = () => {
   return (
-    <section className="demo">
+    <section className="demo" id='demo'>
       <div className="container">
           <div className="col-1">
           <p>More Than 100 Financial Planners,</p>
